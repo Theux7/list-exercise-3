@@ -1,0 +1,152 @@
+header {
+  background-color: #4a90e2;
+  color: #fff;
+  margin: 20px 0 10px 0;
+  padding: 20px;
+  border: 3px solid #357ab8;
+  border-radius: 8px;
+}
+
+main {
+  background-color: #f5f7fa;
+  color: #222;
+  margin: 10px 0;
+  padding: 20px;
+  border: 3px solid #b0bec5;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  margin: 10px 0 20px 0;
+  padding: 15px;
+  border: 3px solid #444;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.destaque {
+  font-style: italic;
+  background-color: #f0f4c3;
+}
+
+#importante {
+  border-top: 5px solid #e53935;
+  padding-top: 10px;
+}
+
+.galeria-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.galeria-grid figure {
+  background: #fff;
+  border: 2px solid #b0bec5;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.galeria-grid figcaption {
+  margin-top: 8px;
+  font-size: 1em;
+  color: #333;
+}
+
+@media (max-width: 900px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .nav-principal {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #4a90e2;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  .nav-principal.open {
+    display: block;
+    animation: fadeIn 0.2s;
+  }
+  .nav-principal ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 20px;
+  }
+  .nav-principal li {
+    margin: 10px 0;
+  }
+  .nav-principal a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+} 
